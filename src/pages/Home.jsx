@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import '../assets/home.scss'
+import '../assets/index.less'
 
 export default class Count extends Component {
     constructor(props) {

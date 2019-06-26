@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import '../assets/home.scss'
 
 export default class Count extends Component {
     constructor(props) {
