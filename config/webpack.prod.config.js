@@ -14,9 +14,9 @@ module.exports = merge(commonConfig, {
         // 输出目录
         path: path.resolve(__dirname, "../build"),
         filename: 'static/js/[name].[chunkhash:8].js',
-    chunkFilename: 'static/js/[name].[chunkhash:8].chunk.js',
+        chunkFilename: 'static/js/[name].[chunkhash:8].chunk.js',
     },
-    devtool: 'cheap-module-source-map',
+    devtool: 'none',
     optimization: {
         usedExports: true,
         splitChunks: {
@@ -45,13 +45,13 @@ module.exports = merge(commonConfig, {
             clientsClaim: true,
             skipWaiting: true
         }),
-        new AddAssetHtmlWebpackPlugin({
-            outputPath:'static/js/',
-            publicPath:'static/js/',
-            filepath: path.resolve(__dirname, '../dll/jquery.dll.js') // 对应的 dll 文件路径
-        }),
-        new webpack.DllReferencePlugin({
-            manifest: path.resolve(__dirname, '..', 'dll/jquery-manifest.json')
-        })
+        // new AddAssetHtmlWebpackPlugin({
+        //     outputPath:'static/js/',
+        //     publicPath:'static/js/',
+        //     filepath: path.resolve(__dirname, '../dll/jquery.dll.js') // 对应的 dll 文件路径
+        // }),
+        // new webpack.DllReferencePlugin({
+        //     manifest: path.resolve(__dirname, '..', 'dll/jquery-manifest.json')
+        // })
     ]
 });
